@@ -1,1 +1,99 @@
-# Heater_ESP32-IDF
+# ***HEATER_ESP32-IDF***
+
+## 1. OVER VIEW OF THE PROJECT
+
+A temperature-based state tracker is a straightforward but powerful embedded system that continuously senses temperature and adjusts its operation based on how hot or cold it becomes. The temperature range should be divided into various levels, such as Target Reached, Heating, Stabilizing, Idle, and Overheat. The system should react in a certain way at each of these levels, also known as states. This type of configuration is helpful in fields where temperature directly influences how the system should operate, such as HVAC monitoring, industrial safety systems, and smart home control.
+
+In this implementation, the system is developed using the ESP-IDF framework on an ESP32 microcontroller, utilizing FreeRTOS to manage periodic operations. Since physical temperature sensors like DS18B20 are not supported in the simulation environment in wokwi for ESP-IDF templates hence, the temperature values are simulated using the esp_random () function. The system transitions through five defined states—Idle, Heating, Stabilizing, Target Reached and Overheat—based on these simulated temperatures. Each state is indicated using dedicated LEDs, while a buzzer and heater output are controlled accordingly to reflect system behaviour. The buzzer is activated in the Overheat state, and the heater is turned off when overheating occurs, demonstrating a complete feedback loop for safe temperature control.
+
+## 2. SODTWARE TOOL USED
+
+WOKWI 
+Wokwi is an online simulator for embedded systems development, especially useful for prototyping microcontroller-based projects like those using the ESP32,STM32,ARDUINO. It allows users to write, compile, and test their code in a virtual environment without needing physical hardware. 
+
+In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater indicator, and a buzzer in a ESP-IDF framework , making it easy to visualize and test our temperature-based state tracking system. Since Wokwi doesn’t support all sensors (like DS18B20) or actual BLE broadcasting, we used simulated values and serial output to verify functionality.
+
+## 3. FEATURES
+
+1. Simlulated Temperature Input - esp randomly simulates the temperature in between 25°C–45°C using the required libraries.
+   
+2. Based on the temperature we have classified into 5 states:
+   
+     • Idle
+   
+     • Heating
+   
+     • Stabilizing
+   
+     • Target Reached
+   
+     • Overheat
+   
+4. Heater control logic (ON/OFF) using an LED.
+
+5. LED indicators for each state.
+
+6. Serial monitor logging to display the following:
+
+     • Cureent Temperature in celsius.
+
+     • Current State
+   
+     • Heater Status(ON/OFF)
+   
+     • Buzzer Status
+
+7. Buzzer alert when system is overheated
+
+8. Implemented using FreeRTOS for task scheduling
+
+
+## 4. HARDWARE COMPONENTS USED IN WOKWI
+
+1. ESP32 - Development board
+
+2. 5 LEDs - To indicate the system state as follows:
+
+     •	IDLE -> Blue led
+   
+     •	HEATING -> Orange led
+   
+     •	STABLIZING -> Pink led
+   
+     •	TARGET REACHED -> Yellow led
+   
+     •	OVER HEATED -> Green led
+
+3. 1 LED - To Indicate the HEATER status(ON/OFF)
+
+     • TURN ON -> Red led
+
+4. Resistors for each Led preferably 220Ω
+
+   Why Resistors are used?
+
+   Resistors limit the current flowing through the LED to prevent it from burning out.
+
+   LEDs are sensitive to high current:
+
+     • LEDs typically operate safely at ~20mA (0.02A).
+
+     • If connected directly to a 3.3V (ESP32) or 5V (Arduino) pin without a resistor, too much current would flow → damaging the LED and possibly the microcontroller.
+
+   Resistor Calculation
+   
+     • Resistance(R) = [ V(supply) - V(led) ] / I
+     • V(supply) = 3.3V (ESP32) [For Ardunio its 5V]
+     • V(led) = 2V (approx. for red LED; varies slightly with color)
+     • I=0.02A ( desired current )
+
+        R = [3.3V - 2V]/0.02A = 65Ω
+
+   So, a resistor of 65Ω would be the absolute minimum for 20mA.
+
+   But we add extra margin for protection, and 220Ω is a commonly available, safe value.
+
+5. Breadboard	- For wiring and connections
+
+     
+     
