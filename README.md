@@ -130,7 +130,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
        
     0.1°C to < 30°C	       Heating	             ON
     
-    30°C to < 35°C	       Stabilizing          ON
+    30°C to < 35°C	       Stabilizing                  ON
     
     35°C to < 40°C	       TargetReached	       ON
     
@@ -151,6 +151,39 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 3. Temperature is in range 0.1°C to < 30°C , State - Heating  , Heater should be ON , RED LED for Heater and ORANGE LED For state GLOWS.
 
 <img width="940" height="572" alt="image" src="https://github.com/user-attachments/assets/4c3aa947-8db7-4527-843a-835773c3a428" />
+
+
+## 8. CONCLUSION
+
+This project successfully implements a temperature-based heater control system using the ESP32 development board and the ESP-IDF framework. The system continuously simulates temperature readings, detects the current temperature range, and transitions between various states — Idle, Heating, Stabilizing, Target Reached, and Overheat. Based on these states, the heater is automatically turned ON or OFF, and LEDs provide clear visual feedback for each condition.
+
+Serial logging ensures that all temperature values, state transitions, and heater status are monitored in real-time, making the system transparent and easy to debug. The use of FreeRTOS enables smooth periodic operation with clear task management.
+
+Although BLE functionality could not be fully demonstrated in the Wokwi simulation due to platform limitations, the structural BLE advertising logic was designed to broadcast the heater state in a real-world deployment.
+
+## 9. FUTURE ENHANCEMENTS
+
+While many of the features listed below are standard in commercial heater control systems, they represent valuable improvements that can be incorporated into this prototype to enhance its real-world functionality, reliability, and usability:
+
+1. Touchscreen or OLED Display
+
+   Provide real-time feedback directly on the device using a small screen for displaying temperature and state info.
+
+2. Data Logging & Analytics
+   
+   Store temperature trends locally (SD card) or remotely (cloud) to analyze heating behavior over time.
+
+3. Wireless Communication & IoT Integration:
+
+   Add Bluetooth (BLE) or Wi-Fi to send data to smartphones or IoT platforms like Blynk, ThingsBoard, or Home Assistant.
+
+   Implement remote control features via mobile apps or cloud dashboards.
+
+
+## 10. AUTHOR
+
+Vasuvandla Sree Charitha
+July 2025
 
 
 
