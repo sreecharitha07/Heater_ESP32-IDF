@@ -6,7 +6,7 @@ A temperature-based state tracker is a straightforward but powerful embedded sys
 
 In this implementation, the system is developed using the ESP-IDF framework on an ESP32 microcontroller, utilizing FreeRTOS to manage periodic operations. Since physical temperature sensors like DS18B20 are not supported in the simulation environment in wokwi for ESP-IDF templates hence, the temperature values are simulated using the esp_random () function. The system transitions through five defined states—Idle, Heating, Stabilizing, Target Reached and Overheat—based on these simulated temperatures. Each state is indicated using dedicated LEDs, while a buzzer and heater output are controlled accordingly to reflect system behaviour. The buzzer is activated in the Overheat state, and the heater is turned off when overheating occurs, demonstrating a complete feedback loop for safe temperature control.
 
-## 2. SOfTWARE TOOL USED
+## 2. SOFTWARE TOOL USED
 
 WOKWI 
 
