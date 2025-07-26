@@ -150,7 +150,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 
 3. Temperature is in range 0.1°C to < 30°C , State - Heating  , Heater should be ON , RED LED for Heater and ORANGE LED For state GLOWS.
 
-   <img width="940" height="572" alt="image" src="https://github.com/user-attachments/assets/4c3aa947-8db7-4527-843a-835773c3a428" />
+<img width="940" height="572" alt="image" src="https://github.com/user-attachments/assets/4c3aa947-8db7-4527-843a-835773c3a428" />
 
 
 
