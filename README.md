@@ -6,9 +6,10 @@ A temperature-based state tracker is a straightforward but powerful embedded sys
 
 In this implementation, the system is developed using the ESP-IDF framework on an ESP32 microcontroller, utilizing FreeRTOS to manage periodic operations. Since physical temperature sensors like DS18B20 are not supported in the simulation environment in wokwi for ESP-IDF templates hence, the temperature values are simulated using the esp_random () function. The system transitions through five defined states—Idle, Heating, Stabilizing, Target Reached and Overheat—based on these simulated temperatures. Each state is indicated using dedicated LEDs, while a buzzer and heater output are controlled accordingly to reflect system behaviour. The buzzer is activated in the Overheat state, and the heater is turned off when overheating occurs, demonstrating a complete feedback loop for safe temperature control.
 
-## 2. SODTWARE TOOL USED
+## 2. SOfTWARE TOOL USED
 
 WOKWI 
+
 Wokwi is an online simulator for embedded systems development, especially useful for prototyping microcontroller-based projects like those using the ESP32,STM32,ARDUINO. It allows users to write, compile, and test their code in a virtual environment without needing physical hardware. 
 
 In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater indicator, and a buzzer in a ESP-IDF framework , making it easy to visualize and test our temperature-based state tracking system. Since Wokwi doesn’t support all sensors (like DS18B20) or actual BLE broadcasting, we used simulated values and serial output to verify functionality.
@@ -70,7 +71,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 
 4. Resistors for each Led preferably 220Ω
 
-   Why Resistors are used?
+   **Why Resistors are used?**
 
    Resistors limit the current flowing through the LED to prevent it from burning out.
 
@@ -80,7 +81,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 
      • If connected directly to a 3.3V (ESP32) or 5V (Arduino) pin without a resistor, too much current would flow → damaging the LED and possibly the microcontroller.
 
-   Resistor Calculation
+   **Resistor Calculation**
    
      • Resistance(R) = [ V(supply) - V(led) ] / I
    
