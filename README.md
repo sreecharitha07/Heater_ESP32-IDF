@@ -130,7 +130,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
        
     0.1°C to < 30°C	       Heating	             ON
     
-    30°C to < 35°C	       Stabilizing                  ON
+    30°C to < 35°C	       Stabilizing              ON
     
     35°C to < 40°C	       TargetReached	       ON
     
