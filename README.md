@@ -125,7 +125,7 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 ## 6. STATE TRANSITION LOGIC
 
     Temperature Range            (°C)               State Heater
-       < 0.1°C	                  Idle	                OFF
+       < 0.1°C	                Idle	                OFF
        
     0.1°C to < 30°C	           Heating	            ON
     
