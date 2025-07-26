@@ -135,20 +135,6 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 | ≥ 40°C                | Overheat       | OFF    |
 
 
-    Temperature Range        (°C)          State Heater
-    
-    < 0.1°C	                Idle	                OFF
-       
-    0.1°C to < 30°C	       Heating	             ON
-    
-    30°C to < 35°C	       Stabilizing              ON
-    
-    35°C to < 40°C	       TargetReached	      ON
-    
-    ≥ 40°C	               Overheat	             OFF
-
-
-
 ## 7. A FEW SNAP SHOTS OF THE PROJECT
 
 1. Temperature > 40°C , State - Overheat , Heater should be OFF , Buzzer should be ON , GREEN LED GLOWS displayed in serial monitor.
