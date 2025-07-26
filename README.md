@@ -83,8 +83,11 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
    Resistor Calculation
    
      • Resistance(R) = [ V(supply) - V(led) ] / I
+   
      • V(supply) = 3.3V (ESP32) [For Ardunio its 5V]
+   
      • V(led) = 2V (approx. for red LED; varies slightly with color)
+   
      • I=0.02A ( desired current )
 
         R = [3.3V - 2V]/0.02A = 65Ω
@@ -93,7 +96,44 @@ In our project, we used Wokwi to simulate the ESP32 along with LEDs, a heater in
 
    But we add extra margin for protection, and 220Ω is a commonly available, safe value.
 
-5. Breadboard	- For wiring and connections
+6. Breadboard	- For wiring and connections
+
+
+## 5. HOW TO RUN IN WOKWI
+
+1. Open Wokwi simulator.
+
+2. Select ESP32 IDF Project template.
+
+3. Write the main.c code according to the specifications.
+
+4. Connect:
+
+     • LEDs to GPIOs 14, 27, 26, 25, 33 (one per state)
+
+     • Heater LED to GPIO 2
+
+     • Buzzer to GPIO 4
+
+     • Each resistor to should be connected each LEDs anode.
+
+   Place the LEDS and resistors in the Bread boeard and make the connection with proper voltage and ground supply
+
+5. Run the simulation and observe output via Serial Monitor.
+
+
+## 6. STATE TRANSITION LOGIC
+
+    Temperature Range            (°C)               State Heater
+       < 0.1°C	                  Idle	                OFF
+    0.1°C to < 30°C	           Heating	             ON
+    30°C to < 35°C	         Stabilizing              ON
+    35°C to < 40°C	         TargetReached	          ON
+       ≥ 40°C	                Overheat	             OFF
+
+       
+
+
 
      
      
